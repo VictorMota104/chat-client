@@ -6,8 +6,7 @@ export const Chat: React.FC = () => {
   const [input, setInput] = useState<string>("");
 
   useEffect(() => {
-    const ws = new WebSocket("wss://chat-g23t.onrender.com");
-
+    const ws = new WebSocket(process.env.REACT_APP_WS_URL!);
     ws.onopen = () => {
       console.log("Connected to server");
     };
